@@ -201,7 +201,7 @@ ol {
   border: 1px solid #fff;
   text-align: center;
   color: currentColor;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -234,15 +234,17 @@ ol {
 
 .content__details {
   grid-area: content__details;
-  display: flex;
-  gap: 25px;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  row-gap: 25px;
+  grid-template-rows: 1fr 1.4fr;
   width: 100%;
-  height: inherit;
+  grid-template-areas:
+    "title"
+    "content__list-container";
 }
 
 .title {
+  grid-area: title;
   font-family: Oswald, sans-serif;
   font-size: 75px;
   font-style: normal;
@@ -256,6 +258,7 @@ ol {
 }
 
 .content__list-container {
+  grid-area: content__list-container;
   position: relative;
   max-height: 298px;
   overflow: auto;
